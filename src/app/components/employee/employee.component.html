@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-8 table-margin">
+        <div class="card">
+            <div class="card-header bg-success">
+                Client List
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Employee Name</th>
+                                    <th>Designation</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
+                                    <th>Code</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for(item of employeeList;track $index){
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{item.empName}}</td>
+                                        <td>{{item.empDesignation}}</td>
+                                        <td>{{item.role}}</td>
+                                        <td>{{item.empEmailId}}</td>
+                                        <td>{{item.empCode}}</td>
+                                        <td>
+                                            <button class="btn btn-primary" (click)="onEditEmployee(item)">Edit</button>
+                                            <button class="btn btn-danger" (click)="onDelete(item.id)">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fixed-form">
+  <div class="card">
+    <div class="card-header bg-success">New Employee</div>
+    <div class="card-body">
+      <form #employeeForm="ngForm">
+        <div class="row">
+          <div class="col-6 mb-2">
+            <label for="empName">Employee Name</label>
+            <input type="text" id="empName" name="empName" class="form-control" [(ngModel)]="newEmployee.empName" required minlength="3" #empName="ngModel" />
+            <div *ngIf="empName.invalid && empName.touched" class="text-danger">
+              <small *ngIf="empName.errors?.['required']">Employee Name is required.</small>
+              <small *ngIf="empName.errors?.['minlength']">Minimum 3 characters.</small>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <label for="empCode">Employee Code</label>
+            <input type="text" id="empCode" name="empCode" class="form-control" [(ngModel)]="newEmployee.empCode" required #empCode="ngModel" />
+            <div *ngIf="empCode.invalid && empCode.touched" class="text-danger">
+              <small *ngIf="empCode.errors?.['required']">Employee Code is required.</small>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <label for="empEmailId">Email ID</label>
+            <input type="email" id="empEmailId" name="empEmailId" class="form-control" [(ngModel)]="newEmployee.empEmailId" required #empEmailId="ngModel" />
+            <div *ngIf="empEmailId.invalid && empEmailId.touched" class="text-danger">
+              <small *ngIf="empEmailId.errors?.['required']">Email ID is required.</small>
+              <small *ngIf="empEmailId.errors?.['email']">Enter a valid email address.</small>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <label for="empDesignation">Designation</label>
+            <input type="text" id="empDesignation" name="empDesignation" class="form-control" [(ngModel)]="newEmployee.empDesignation" required #empDesignation="ngModel" />
+            <div *ngIf="empDesignation.invalid && empDesignation.touched" class="text-danger">
+              <small *ngIf="empDesignation.errors?.['required']">Designation is required.</small>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <label for="role">Role</label>
+            <input type="text" id="role" name="role" class="form-control" [(ngModel)]="newEmployee.role" required #role="ngModel" />
+            <div *ngIf="role.invalid && role.touched" class="text-danger">
+              <small *ngIf="role.errors?.['required']">Role is required.</small>
+            </div>
+          </div>
+          <div class="col-6 mb-2">
+            <label for="empId">Employee ID</label>
+            <input type="text" id="empId" name="empId" class="form-control" [(ngModel)]="newEmployee.empId" required #empId="ngModel" />
+            <div *ngIf="empId.invalid && empId.touched" class="text-danger">
+              <small *ngIf="empId.errors?.['required']">Employee ID is required.</small>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-2">
+          <div class="col-12 text-center">
+            <button class="btn btn-success" type="button" [disabled]="employeeForm.invalid" (click)="isEditMode ? onUpdateEmployee() : onSaveEmployee()">
+              {{isEditMode ? 'Update Employee' : 'Save Employee'}}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

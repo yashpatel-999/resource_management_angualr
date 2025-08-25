@@ -1,0 +1,10 @@
+.fixed-form {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 400px;
+  z-index: 1000;
+}
+.table-margin {
+  margin-top: 60px;
+}

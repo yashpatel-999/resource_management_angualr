@@ -1,0 +1,140 @@
+<div class="row">
+    <div class="col-8 table-margin">
+        <div class="card">
+            <div class="card-header bg-success">
+                Client List -{{currentDate| date:"dd-MMM-YYY"}}
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Company Name</th>
+                                    <th>Person Name</th>
+                                    <th>Contact No</th>
+                                    <th>City</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of clientList; index as i">
+                                    <td>{{i+1}}</td>
+                                    <td>{{item.companyName|uppercase}}</td>
+                                    <td>{{item.contactPersonName}}</td>
+                                    <td>{{item.contactNo}}</td>
+                                    <td>{{item.city}}</td>
+                                    <td>
+                                        <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
+                                        <button class="btn btn-danger" (click)="onDelete(item.id)">Delete</button>
+                                    </td>
+                                </tr>
+                                
+                                <!-- more rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 fixed-form-client">
+        <div class="card">
+            <div class="card-header bg-success">
+                New Client
+            </div>
+            <div class="card-body">
+                <form #clientForm="ngForm" (ngSubmit)="onSaveClient()">
+                    <div class="row">
+                        <div class="col-6 mb-2">
+                            <label for="personName">Person Name</label>
+                            <input type="text" id="personName" name="personName" class="form-control" [(ngModel)]="clientObj.contactPersonName" required minlength="3" #personName="ngModel" />
+                            <div *ngIf="personName.invalid && personName.touched" class="text-danger">
+                                <small *ngIf="personName.errors?.['required']">Person Name is required.</small>
+                                <small *ngIf="personName.errors?.['minlength']">Minimum 3 characters.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName" class="form-control" [(ngModel)]="clientObj.companyName" required minlength="3" #companyName="ngModel" />
+                            <div *ngIf="companyName.invalid && companyName.touched" class="text-danger">
+                                <small *ngIf="companyName.errors?.['required']">Company Name is required.</small>
+                                <small *ngIf="companyName.errors?.['minlength']">Minimum 3 characters.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="contactNo">Contact No</label>
+                            <input type="text" id="contactNo" name="contactNo" class="form-control" [(ngModel)]="clientObj.contactNo" required pattern="^[0-9]{10}$" #contactNo="ngModel" />
+                            <div *ngIf="contactNo.invalid && contactNo.touched" class="text-danger">
+                                <small *ngIf="contactNo.errors?.['required']">Contact No is required.</small>
+                                <small *ngIf="contactNo.errors?.['pattern']">Enter a valid 10-digit number.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" class="form-control" [(ngModel)]="clientObj.city" required #city="ngModel" />
+                            <div *ngIf="city.invalid && city.touched" class="text-danger">
+                                <small *ngIf="city.errors?.['required']">City is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="pincode">Pincode</label>
+                            <input type="text" id="pincode" name="pincode" class="form-control" [(ngModel)]="clientObj.pincode" required pattern="^[0-9]{6}$" #pincode="ngModel" />
+                            <div *ngIf="pincode.invalid && pincode.touched" class="text-danger">
+                                <small *ngIf="pincode.errors?.['required']">Pincode is required.</small>
+                                <small *ngIf="pincode.errors?.['pattern']">Enter a valid 6-digit pincode.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state" class="form-control" [(ngModel)]="clientObj.state" required #state="ngModel" />
+                            <div *ngIf="state.invalid && state.touched" class="text-danger">
+                                <small *ngIf="state.errors?.['required']">State is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address" class="form-control" [(ngModel)]="clientObj.address" required #address="ngModel"></textarea>
+                            <div *ngIf="address.invalid && address.touched" class="text-danger">
+                                <small *ngIf="address.errors?.['required']">Address is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="employeeStrength">Employee Strength</label>
+                            <input type="number" id="employeeStrength" name="employeeStrength" class="form-control" [(ngModel)]="clientObj.employeeStrength" required min="1" #employeeStrength="ngModel" />
+                            <div *ngIf="employeeStrength.invalid && employeeStrength.touched" class="text-danger">
+                                <small *ngIf="employeeStrength.errors?.['required']">Employee Strength is required.</small>
+                                <small *ngIf="employeeStrength.errors?.['min']">Minimum value is 1.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="gstNo">Gst No</label>
+                            <input type="text" id="gstNo" name="gstNo" class="form-control" [(ngModel)]="clientObj.gstNo" required #gstNo="ngModel" />
+                            <div *ngIf="gstNo.invalid && gstNo.touched" class="text-danger">
+                                <small *ngIf="gstNo.errors?.['required']">GST No is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="regNo">Reg No</label>
+                            <input type="text" id="regNo" name="regNo" class="form-control" [(ngModel)]="clientObj.regNo" required #regNo="ngModel" />
+                            <div *ngIf="regNo.invalid && regNo.touched" class="text-danger">
+                                <small *ngIf="regNo.errors?.['required']">Reg No is required.</small>
+                            </div>
+                        </div>
+                        <div class="row pt-2">
+                            <div class="col-6 text-center">
+                                    <button class="btn btn-secondary" type="button" (click)="resetClientForm(clientForm)">Reset</button>
+                            </div>
+                            <div class="col-6 text-center">
+                                <button class="btn btn-success" type="submit" [disabled]="clientForm.invalid">
+                                    {{clientObj.id!=0?'Update Client':'Save Client'}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

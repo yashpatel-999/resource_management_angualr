@@ -1,0 +1,158 @@
+<div class="row">
+    <div class="col-8 table-margin">
+        <div class="card">
+            <div class="card-header bg-success">
+                Client List
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Project Name</th>
+                                    <th>Lead By</th>
+                                    <th>Client</th>
+                                    <th>Expected End Date</th>
+                                    <th>EmpWorking</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for(item of projectList;track $index){
+                                    <tr>
+                                        <td>{{$index+1}}</td>
+                                        <td>{{item.projectName}}</td>
+                                        <td>{{item.leadByEmpId}}</td>
+                                        <td>{{item.clientId}}</td>
+                                        <td>{{item.expectedEndDate}}</td>
+                                        <td>{{item.totalEmpWorking}}</td>
+                                        <td>
+                                            <button class="btn btn-primary" (click)="onEditProject(item)">Edit</button>
+                                            <button class="btn btn-danger" (click)="onDeleteProject(item.id)">Delete</button>
+                                        </td>
+                                    </tr>
+                                }
+                                
+                                <!-- more rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 fixed-form-client-project">
+        <div class="card">
+            <div class="card-header bg-success">
+                New Client
+            </div>
+            <div class="card-body">
+                <form [formGroup]="projectForm" (ngSubmit)="editMode ? onUpdateProject() : OnSaveProject()">
+                    <div *ngIf="projectForm.invalid && isSubmitting" class="text-danger pb-2">
+                        <strong>Form is invalid. Please check all fields highlighted in red.</strong>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 mb-2">
+                            <label for="projectName">Project Name</label>
+                            <input type="text" formControlName="projectName" class="form-control">
+                            <div *ngIf="projectForm.get('projectName')?.invalid && projectForm.get('projectName')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('projectName')?.errors?.['required']">Project Name is required.</small>
+                                <small *ngIf="projectForm.get('projectName')?.errors?.['minlength']">Minimum 3 characters.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="startDate">Start Date</label>
+                            <input type="date" formControlName="startDate" class="form-control">
+                            <div *ngIf="projectForm.get('startDate')?.invalid && projectForm.get('startDate')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('startDate')?.errors?.['required']">Start Date is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="expectedEndDate">Expected End Date</label>
+                            <input type="date" formControlName="expectedEndDate" class="form-control">
+                            <div *ngIf="projectForm.get('expectedEndDate')?.invalid && projectForm.get('expectedEndDate')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('expectedEndDate')?.errors?.['required']">Expected End Date is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <label for="contactPerson">Contact Name</label>
+                            <input type="text" formControlName="contactPerson" class="form-control">
+                            <div *ngIf="projectForm.get('contactPerson')?.invalid && projectForm.get('contactPerson')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('contactPerson')?.errors?.['required']">Contact Name is required.</small>
+                                <small *ngIf="projectForm.get('contactPerson')?.errors?.['minlength']">Minimum 3 characters.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Contact Mobile</label>
+                            <input type="text" formControlName="contactPersonContactNo" class="form-control">
+                            <div *ngIf="projectForm.get('contactPersonContactNo')?.invalid && projectForm.get('contactPersonContactNo')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('contactPersonContactNo')?.errors?.['required']">Contact Mobile is required.</small>
+                                <small *ngIf="projectForm.get('contactPersonContactNo')?.errors?.['pattern']">Enter a valid 10-digit number.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Contact Email</label>
+                            <input type="text" formControlName="contactPersonEmailId" class="form-control">
+                            <div *ngIf="projectForm.get('contactPersonEmailId')?.invalid && projectForm.get('contactPersonEmailId')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('contactPersonEmailId')?.errors?.['required']">Contact Email is required.</small>
+                                <small *ngIf="projectForm.get('contactPersonEmailId')?.errors?.['email']">Enter a valid email address.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Total Employee Count</label>
+                            <input type="text" formControlName="totalEmpWorking" class="form-control">
+                            <div *ngIf="projectForm.get('totalEmpWorking')?.invalid && projectForm.get('totalEmpWorking')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('totalEmpWorking')?.errors?.['required']">Total Employee Count is required.</small>
+                                <small *ngIf="projectForm.get('totalEmpWorking')?.errors?.['min']">Minimum value is 1.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Project Description</label>
+                            <textarea type="text" formControlName="projectDetails" class="form-control"></textarea>
+                            <div *ngIf="projectForm.get('projectDetails')?.invalid && projectForm.get('projectDetails')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('projectDetails')?.errors?.['required']">Project Description is required.</small>
+                                <small *ngIf="projectForm.get('projectDetails')?.errors?.['minlength']">Minimum 5 characters.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Project Costing</label>
+                            <select formControlName="clientId" class="form-control">
+                                <option value="">Select Client</option>
+                                @for(item of clientList;track $index){
+                                    <option [value]="item.companyName">{{item.companyName}}</option>
+                                }
+                            </select>
+                            <div *ngIf="projectForm.get('clientId')?.invalid && projectForm.get('clientId')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('clientId')?.errors?.['required']">Client selection is required.</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="">Lead By</label>
+                            <select formControlName="leadByEmpId" class="form-control">
+                                <option value="">Select Lead</option>
+                                @for(item of employeeList;track $index){
+                                    <option [value]="item.empName">{{item.empName}} - {{item.empId}}</option>
+                                }
+                            </select>
+                            <div *ngIf="projectForm.get('leadByEmpId')?.invalid && projectForm.get('leadByEmpId')?.touched" class="text-danger">
+                                <small *ngIf="projectForm.get('leadByEmpId')?.errors?.['required']">Lead selection is required.</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pt-2">
+                        <div class="col-6 text-center">
+                            <button class="btn btn-secondary" type="button" (click)="onResetForm()">Reset</button>
+                        </div>
+                        <div class="col-6 text-center">
+                            <button class="btn btn-success" [disabled]="isSubmitting" (click)="editMode ? onUpdateProject() : OnSaveProject()">
+                                {{editMode ? 'Update Project' : 'Save Project'}}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

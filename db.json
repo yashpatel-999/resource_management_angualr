@@ -1,0 +1,569 @@
+{
+  "rolesResponse": {
+    "message": "",
+    "result": true,
+    "data": [
+      {
+        "roleId": 4,
+        "role": "Junior Developer"
+      },
+      {
+        "roleId": 6,
+        "role": "Team Lead"
+      },
+      {
+        "roleId": 13,
+        "role": "Manager"
+      },
+      {
+        "roleId": 36,
+        "role": "Devops Manager"
+      },
+      {
+        "roleId": 37,
+        "role": "Sr Soft Eng"
+      },
+      {
+        "roleId": 38,
+        "role": "Sr QA Lead"
+      },
+      {
+        "roleId": 39,
+        "role": "string"
+      }
+    ]
+  },
+  "designationsResponse": {
+    "message": "",
+    "result": true,
+    "data": [
+      {
+        "designationId": 30,
+        "designation": "Ben"
+      },
+      {
+        "designationId": 35,
+        "designation": "UI/UX des"
+      },
+      {
+        "designationId": 43,
+        "designation": "ui"
+      }
+    ]
+  },
+  "clients": [
+    {
+      "id": "8413",
+      "contactPersonName": "Rahul",
+      "companyName": "Nxtwave",
+      "address": "string",
+      "city": "bengo",
+      "pincode": "string",
+      "state": "string",
+      "employeeStrength": 0,
+      "gstNo": "string",
+      "contactNo": "6985478569",
+      "regNo": "string"
+    },
+    {
+      "id": "8435",
+      "contactPersonName": "XYZ",
+      "companyName": "Accenture",
+      "address": "addadasdasdasd",
+      "city": "pune",
+      "pincode": "411047",
+      "state": "MH",
+      "employeeStrength": 23,
+      "gstNo": "asdasd",
+      "contactNo": "1111122222",
+      "regNo": "asdad"
+    },
+    {
+      "id": "8472",
+      "contactPersonName": "Vishal",
+      "companyName": "Big B",
+      "address": "Memanagar, Gurukul Metro, Ahmedabad",
+      "city": "Ahmedabad",
+      "pincode": "380052",
+      "state": "Gujarat",
+      "employeeStrength": 745,
+      "gstNo": "12312312312312",
+      "contactNo": "8754784596",
+      "regNo": "GJ-01"
+    },
+    {
+      "id": "8475",
+      "contactPersonName": "Janvi",
+      "companyName": "Rubust",
+      "address": "bbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "city": "Baroda",
+      "pincode": "789955",
+      "state": "MP",
+      "employeeStrength": 78,
+      "gstNo": "0i0000-23-32",
+      "contactNo": "1234112412",
+      "regNo": "432141"
+    },
+    {
+      "id": "8476",
+      "contactPersonName": "Maya",
+      "companyName": "Zoner",
+      "address": "BBBBBBBBBBBBBBBBbbbbbb",
+      "city": "Vapi",
+      "pincode": "923932",
+      "state": "Gujarat",
+      "employeeStrength": 1213,
+      "gstNo": "9293f-d-fwef3",
+      "contactNo": "2930320113",
+      "regNo": "2j1be9f1"
+    },
+    {
+      "id": "8479",
+      "contactPersonName": "Rahul kumar",
+      "companyName": "capgemni",
+      "address": "skfdkafiowedcmfior iewrfdosj",
+      "city": "mumbai",
+      "pincode": "741852",
+      "state": "mumbai",
+      "employeeStrength": 10000,
+      "gstNo": "jsdfnrekt477",
+      "contactNo": "7485961230",
+      "regNo": "55442fr"
+    },
+    {
+      "id": "8327",
+      "contactPersonName": "Samy smithc",
+      "companyName": "Google ABhhh",
+      "address": "Mars 3",
+      "city": "wewwwr",
+      "pincode": "212122",
+      "state": "Texas",
+      "employeeStrength": 12121212,
+      "gstNo": "232323",
+      "contactNo": "4111111115",
+      "regNo": "232323232"
+    },
+    {
+      "id": "72d5",
+      "contactPersonName": "Laxmi",
+      "companyName": "NIAT",
+      "address": "3-63\nIndrA NAGAR COLONY\nNEAR WATER TANK",
+      "city": "SHADNAGAR",
+      "pincode": "509228",
+      "state": "Telangana",
+      "employeeStrength": 90,
+      "gstNo": "124",
+      "contactNo": "1234567890",
+      "regNo": "435"
+    },
+    {
+      "id": "e7ee",
+      "contactPersonName": "Yash",
+      "companyName": "Actlogica",
+      "address": "noo",
+      "city": "Kothur",
+      "pincode": "509228",
+      "state": "TG",
+      "employeeStrength": 12,
+      "gstNo": "1234",
+      "contactNo": "1234567890",
+      "regNo": "sdcv"
+    }
+  ],
+  "employees": [
+    {
+      "empName": "Pratiksha",
+      "empId": 1348,
+      "empCode": "CT-471",
+      "empEmailId": "st123@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "e465"
+    },
+    {
+      "empName": "Jon Ebbb",
+      "empId": 1330,
+      "empCode": "CT-451",
+      "empEmailId": "je@exo.com",
+      "empDesignation": "UI/UX des",
+      "role": "Sr Soft Eng",
+      "id": "a3e4"
+    },
+    {
+      "empName": "Jon E",
+      "empId": 1325,
+      "empCode": "CT-451",
+      "empEmailId": "je@exo.com",
+      "empDesignation": "UI/UX des",
+      "role": "Sr Soft Eng",
+      "id": "5275"
+    },
+    {
+      "empName": "Jon B",
+      "empId": 1321,
+      "empCode": "CT-421",
+      "empEmailId": "jb@exo.com",
+      "empDesignation": "UI/UX des",
+      "role": "Team Lead",
+      "id": "9b4a"
+    },
+    {
+      "empName": "John Derrick",
+      "empId": 1319,
+      "empCode": "CT-411",
+      "empEmailId": "j@exa.com",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "2291"
+    },
+    {
+      "empName": "vilas shinde",
+      "empId": 1314,
+      "empCode": "CT-421",
+      "empEmailId": "vilas@gmail.com",
+      "empDesignation": "Ben",
+      "role": "string",
+      "id": "85a3"
+    },
+    {
+      "empName": "Ashish Awasthi",
+      "empId": 1312,
+      "empCode": "CT-401",
+      "empEmailId": "EXO011",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "48f9"
+    },
+    {
+      "empName": "Ashish Awasthi",
+      "empId": 1311,
+      "empCode": "CT-391",
+      "empEmailId": "EXO010",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "c6ce"
+    },
+    {
+      "empName": "Ashish Awasthi",
+      "empId": 1310,
+      "empCode": "CT-381",
+      "empEmailId": "EXO010",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "594e"
+    },
+    {
+      "empName": "Sham Shinde",
+      "empId": 1301,
+      "empCode": "CT-371",
+      "empEmailId": "sham@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "0c09"
+    },
+    {
+      "empName": "string",
+      "empId": 1297,
+      "empCode": "CT-371",
+      "empEmailId": "xyz@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "998c"
+    },
+    {
+      "empName": "string",
+      "empId": 1296,
+      "empCode": "CT-361",
+      "empEmailId": "xyz@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "1dd7"
+    },
+    {
+      "empName": "Priyanka",
+      "empId": 1294,
+      "empCode": "CT-341",
+      "empEmailId": "rasalp1990@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "0ad0"
+    },
+    {
+      "empName": "sham Shinde",
+      "empId": 1293,
+      "empCode": "CT-331",
+      "empEmailId": "sham@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Team Lead",
+      "id": "70d3"
+    },
+    {
+      "empName": "sushil",
+      "empId": 1292,
+      "empCode": "CT-321",
+      "empEmailId": "sushil@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "0ff6"
+    },
+    {
+      "empName": "Rama",
+      "empId": 1280,
+      "empCode": "CT-3621",
+      "empEmailId": "rama@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Team Lead",
+      "id": "57f3"
+    },
+    {
+      "empName": "Pratiksha Katkar",
+      "empId": 1279,
+      "empCode": "CT-3621",
+      "empEmailId": "test12@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Manager",
+      "id": "f2d8"
+    },
+    {
+      "empName": "aaaaa",
+      "empId": 1269,
+      "empCode": "CT-3691",
+      "empEmailId": "abc12@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "c7ec"
+    },
+    {
+      "empName": "Sujata",
+      "empId": 1260,
+      "empCode": "CT-3641",
+      "empEmailId": "xyz112@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "1d5e"
+    },
+    {
+      "empName": "Pankaj Kumar",
+      "empId": 1258,
+      "empCode": "CT-3641",
+      "empEmailId": "Pankaj@com",
+      "empDesignation": "UI/UX des",
+      "role": "Team Lead",
+      "id": "21d6"
+    },
+    {
+      "empName": "Akshay",
+      "empId": 1256,
+      "empCode": "CT-3621",
+      "empEmailId": "Akshay@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "990c"
+    },
+    {
+      "empName": "Akshay",
+      "empId": 1254,
+      "empCode": "CT-3601",
+      "empEmailId": "Akshay@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "fa2a"
+    },
+    {
+      "empName": "Akshay",
+      "empId": 1253,
+      "empCode": "CT-3591",
+      "empEmailId": "Akshay@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "9237"
+    },
+    {
+      "empName": "samir pawar",
+      "empId": 1252,
+      "empCode": "CT-3581",
+      "empEmailId": "samirpawar123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "2614"
+    },
+    {
+      "empName": "samir pawar",
+      "empId": 1251,
+      "empCode": "CT-3571",
+      "empEmailId": "samirpawar234@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "942e"
+    },
+    {
+      "empName": "samir pawar",
+      "empId": 1250,
+      "empCode": "CT-3561",
+      "empEmailId": "samirpawar123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "1985"
+    },
+    {
+      "empName": "samir pawar",
+      "empId": 1249,
+      "empCode": "CT-3551",
+      "empEmailId": "samirpawar123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "0f2e"
+    },
+    {
+      "empName": "samir p",
+      "empId": 1248,
+      "empCode": "CT-3541",
+      "empEmailId": "samirp123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "8c9b"
+    },
+    {
+      "empName": "samir p",
+      "empId": 1247,
+      "empCode": "CT-3531",
+      "empEmailId": "samirp123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "da60"
+    },
+    {
+      "empName": "suraj pawar",
+      "empId": 1245,
+      "empCode": "CT-3511",
+      "empEmailId": "surajpawar123@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "9f8d"
+    },
+    {
+      "empName": "Ramesh S kkk",
+      "empId": 1237,
+      "empCode": "CT-3461",
+      "empEmailId": "test@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "1bf2"
+    },
+    {
+      "empName": "Nisha",
+      "empId": 1233,
+      "empCode": "CT-3431",
+      "empEmailId": "Nisha@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "8db3"
+    },
+    {
+      "empName": "Birendra",
+      "empId": 1232,
+      "empCode": "CT-3421",
+      "empEmailId": "bk@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "a2ef"
+    },
+    {
+      "empName": "Priyanka Rasal",
+      "empId": 1226,
+      "empCode": "CT-3381",
+      "empEmailId": "rasalp1990@gmail.com",
+      "empDesignation": "UI/UX des",
+      "role": "Junior Developer",
+      "id": "cf5f"
+    },
+    {
+      "empName": "Ramesh S",
+      "empId": 1225,
+      "empCode": "CT-3371",
+      "empEmailId": "QQ@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Team Lead",
+      "id": "97f6"
+    },
+    {
+      "empName": "Rahul K",
+      "empId": 1223,
+      "empCode": "CT-3351",
+      "empEmailId": "rahul@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "268b"
+    },
+    {
+      "empName": "Suresh Kumaras",
+      "empId": 1221,
+      "empCode": "CT-3341",
+      "empEmailId": "suresh@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Team Lead",
+      "id": "5bff"
+    },
+    {
+      "empName": "Qw EMp",
+      "empId": 1219,
+      "empCode": "CT-3371",
+      "empEmailId": "qw@emp.com",
+      "empDesignation": "Ben",
+      "role": "Manager",
+      "id": "567f"
+    },
+    {
+      "empName": "Jane K",
+      "empId": 1217,
+      "empCode": "CT-3351",
+      "empEmailId": "jane@gmail.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "33e4"
+    },
+    {
+      "empName": "Akask S",
+      "empId": 1214,
+      "empCode": "CT-3331",
+      "empEmailId": "Akask123@qw.com",
+      "empDesignation": "Ben",
+      "role": "Junior Developer",
+      "id": "4a40"
+    }
+  ],
+  "clientProjects": [
+    {
+      "id": "d615",
+      "clientProjectId": 0,
+      "projectName": "Actlogica",
+      "startDate": "2025-08-21",
+      "expectedEndDate": "2025-09-11",
+      "leadByEmpId": "Priyanka",
+      "completedDate": "",
+      "contactPerson": "Yashwanth Thota",
+      "contactPersonContactNo": "1234567890",
+      "totalEmpWorking": "34",
+      "projectCost": "",
+      "projectDetails": "qwerty",
+      "contactPersonEmailId": "thotayash47@gmail.com",
+      "clientId": "Nxtwave"
+    },
+    {
+      "id": "7a43",
+      "clientProjectId": 0,
+      "projectName": "interafce",
+      "startDate": "2025-08-21",
+      "expectedEndDate": "2025-08-23",
+      "leadByEmpId": "John Derrick",
+      "completedDate": "",
+      "contactPerson": "Yash Thota",
+      "contactPersonContactNo": "7416156093",
+      "totalEmpWorking": "34",
+      "projectCost": "",
+      "projectDetails": "erfgdfgb",
+      "contactPersonEmailId": "thotayash47@gmail.com",
+      "clientId": "Zoner"
+    }
+  ]
+}
